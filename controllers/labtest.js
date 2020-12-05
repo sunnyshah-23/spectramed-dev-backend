@@ -43,7 +43,7 @@ exports.enquiry = (req, res) => {
     console.log("SAVED IN FOLDER");
     const id = uuidv4();
     const filePath =
-      "C:/Users/shahs/Desktop/Sunny/spectramed/spectramed-backend/upload_prescription/" +
+      "C:/Users/Admin/Desktop/Sunny/spectramed-dev/spectramed-dev-backend/upload_prescription/" +
       id;
     ImageDataURI.outputFile(photo, filePath)
       .then((res) => console.log("DATA URI SUCCCESS", res))
