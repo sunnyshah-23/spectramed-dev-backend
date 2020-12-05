@@ -31,7 +31,7 @@ exports.attachment = (
   phone,
   test_type,
   test_name,
-  newpath,
+  filePath,
   pincode
 ) => {
   const transporter = nodemailer.createTransport({
@@ -44,7 +44,7 @@ exports.attachment = (
   var attachments = [
     {
       filename: `${name}.jpg`,
-      path: `${newpath}`,
+      path: `${filePath}`,
       contentType: "application/jpg",
     },
   ];
