@@ -44,7 +44,7 @@ exports.attachment = (
   var attachments = [
     {
       filename: `${name}.jpg`,
-      path: `.././upload_prescription/${id}`,
+      path: `upload_prescription/${id}`,
       contentType: "application/jpg",
     },
   ];

@@ -41,10 +41,17 @@ exports.enquiry = (req, res) => {
     );
   } else {
     console.log("SAVED IN FOLDER");
-    const id = uuidv4();
-    const filePath = ".././upload_prescription/" + id;
+    var id = uuidv4();
+    const filePath = "upload_prescription/" + id;
     ImageDataURI.outputFile(photo, filePath)
-      .then((res) => console.log("DATA URI SUCCCESS", res))
+
+      .then((res) => {
+        console.log("DATA URI SUCCCESS", res);
+        const ext = res.split(".");
+        console.log("EXT", ext);
+        id = id + "." + ext[1];
+        console.log("id", id);
+      })
       .catch((err) => console.log("DATA URI", err));
     const sqlInsert =
       "INSERT INTO Enquiry(Date,Name,Email,Phone_no,Test_type,Test_name,Pincode,Prescription) VALUES (?,?,?,?,?,?,?,?)";
