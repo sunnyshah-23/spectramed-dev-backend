@@ -42,9 +42,7 @@ exports.enquiry = (req, res) => {
   } else {
     console.log("SAVED IN FOLDER");
     const id = uuidv4();
-    const filePath =
-      "C:/Users/Admin/Desktop/Sunny/spectramed-dev/spectramed-dev-backend/upload_prescription/" +
-      id;
+    const filePath = ".././upload_prescription/" + id;
     ImageDataURI.outputFile(photo, filePath)
       .then((res) => console.log("DATA URI SUCCCESS", res))
       .catch((err) => console.log("DATA URI", err));
@@ -61,15 +59,7 @@ exports.enquiry = (req, res) => {
         } else {
           res.json("successfully added in DB");
           console.log("BEFORE ATTACHMENt");
-          attachment(
-            name,
-            email,
-            phone,
-            test_type,
-            test_name,
-            filePath,
-            pincode
-          );
+          attachment(name, email, phone, test_type, test_name, id, pincode);
         }
       }
     );
